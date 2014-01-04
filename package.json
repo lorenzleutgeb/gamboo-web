@@ -8,6 +8,10 @@
   "dependencies": {
     "express": "3.4.7",
     "jade": "*",
-    "stylus": "*"
+    "stylus": "*",
+    "spdy": "*"
+  }
+  "engines": {
+    "node": ">= 0.11.10"
   }
 }
