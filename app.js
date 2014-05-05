@@ -1,6 +1,5 @@
 var express = require('express');
 var routes = require('./routes');
-var user = require('./routes/user');
 var http = require('http');
 var spdy = require('spdy');
 var path = require('path');
@@ -26,6 +25,7 @@ app.get('/', routes.index);
 spdy.createServer({
 	key: fs.readFileSync('key.pem'),
 	cert: fs.readFileSync('cert.pem'),
+//	ciphers: 'ecdhe-ecdsa-aes256-gcm-sha384:ecdhe-ecdsa-aes128-gcm-sha256',
 	ciphers: 'ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES128-GCM-SHA256',
 	honorCipherOrder: true
 }, app).listen(443);
